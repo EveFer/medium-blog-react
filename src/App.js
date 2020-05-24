@@ -9,12 +9,13 @@ import {
 } from 'react-router-dom'
 
 // Pages
+import Posts from './pages/Posts'
 
 function App() {
   return (
     <Router>
-      <div className="container-fluid">
-        <div className="container"></div>
+      <div className="container">
+        <Posts />
         {/* <Switch>
             <Route exact path="/" >
             </Route>
