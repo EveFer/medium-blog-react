@@ -1,0 +1,80 @@
+@import '../../styles/_variables.scss';
+
+.desktop-medium {
+    font-size: 2px;
+  }
+  .avatar-medium {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  .logo-medium {
+    height: 22px;
+    width: 112px;
+    cursor: pointer;
+  }
+  
+  .upgrade-header {
+    height: 32px;
+    font-size: 10px;
+    &:active {
+      background-color: white;
+    }
+    padding-right: 18px;
+  }
+  .fa-bell {
+    padding-right: 18px;
+    cursor: pointer;
+    color: $color-gray;
+  }
+  
+  .fa-search {
+    padding-right: 18px;
+    cursor: pointer;
+    padding-left: 50px;
+    color: $color-gray;
+  }
+  .fa-bookmark {
+    padding-right: 18px;
+    cursor: pointer;
+    color: $color-gray;
+  }
+  .padding-images {
+    padding-top: 100px;
+  }
+  
+  .btn-busqueda {
+    font-size: 15px;
+    font-weight: 1px;
+    &:active {
+      color: white;
+    }
+  }
+  @media (max-width: 600px) {
+    .logo-medium {
+      visibility: hidden;
+      display: none;
+    }
+  
+    .fa-bookmark {
+      visibility: hidden;
+    }
+    .upgrade-header {
+      visibility: hidden;
+    }
+    .mobile-distribution {
+      padding: 4px;
+      margin: 0px;
+      align-content: space-between;
+    }
+  
+    .fa-bell {
+      padding: 0px;
+    }
+    .fa-medium {
+      padding: 0px;
+    }
+    .margin-right {
+      margin-right: 10px;
+    }
+  }

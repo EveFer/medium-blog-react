@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 
+// Components
+import Header from '../../components/Header'
+
 export default class Posts extends Component {
   render() {
     return (
       <>
-        <div className="row">
-          <div className="col-12">
-            {/* Aqui componente Header - Fer */}
-            HEADER
-          </div>
-        </div>
+        <Header />
 
         <div className="row">
           <div className="col-12">
@@ -43,8 +41,6 @@ export default class Posts extends Component {
               GERARDO
           </div>
         </div>
-        
-        
       </>
     )
   }
