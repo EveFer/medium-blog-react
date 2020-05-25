@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import logo from '../../assets/img/logo medium-desktop.png'
 import avatar from '../../assets/img/avatar.png'
 
 import './Header.scss'
 
-function Header(props) {
+export default class Header extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
     return (
         <div className="row">
           <div className="col-12">
@@ -16,24 +21,31 @@ function Header(props) {
                 <i className="fab fa-medium d-md-none"></i>
               </div>
               <div className="mt-2 d-flex align-items-center">
-                <i id="view" data-toggle="tooltip" title="Search Medium" className="fas fa-search mobile-distribution margin-right"></i>
+                {/* <span className="icon-search"><i id="view" data-toggle="tooltip" title="Search Medium" className="fas fa-search mobile-distribution margin-right"></i></span>  */}
+                
+                <label className="icon-search" for="isChecked"><i id="view" data-toggle="tooltip" title="Search Medium" className="fas fa-search mobile-distribution margin-right"></i></label>
+                <input type="checkbox" id="isChecked"></input>
                 <input 
                   id="ocultar" 
                   type="text" 
                   placeholder="Search Medium"
                   className="rounded border-dark text-center border-0 btn-busqueda mr-2" 
                 />
+
+                
+                
+                
                 <i data-toggle="tooltip" title="Bookmarks" className="far fa-bookmark d-none d-md-block "></i>
                 <i data-toggle="tooltip" title="Notifications" className="far fa-bell margin-right"></i>
                 <button 
                   type="button"
-                  className="btn rounded upgrade-header border border-dark d-none d-md-block mr-2 ">Upgrade</button>
+                  className="btn rounded upgrade-header border border-dark d-none d-md-block mr-2 "
+                >Upgrade</button>
                 <img class="avatar-medium margin-right " src={avatar} alt=""></img>
               </div>
             </header>
           </div>
         </div>
     )
+  }
 }
-
-export default Header
