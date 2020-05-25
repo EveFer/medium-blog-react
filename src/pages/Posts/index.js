@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 // Components
 import Header from '../../components/Header'
+import Banner from '../../components/Banner'
 
 export default class Posts extends Component {
   render() {
@@ -15,22 +16,9 @@ export default class Posts extends Component {
             NAVBAR
           </div>
         </div>
-
-        <div className="row">
-          <div className="col-12 col-md-6 col-lg-4">
-            {/* Aqui componente Banner - Marce */}
-            MARCE
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {/* Aqui componente Banner - Marce */}
-            MARCE 1
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {/* Aqui componente Banner - Marce */}
-            MARCE 2
-          </div>
-        </div>
-
+          
+        <Banner/>
+        
         <div className="row">
           <div className="col-12 col-lg-8">
               {/* Aqui componente MiddleSection - Gerardo */}
