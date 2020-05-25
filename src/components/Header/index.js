@@ -14,7 +14,10 @@ function Header({isAuthenticated}) {
           <div className="col-12">
             <header className="d-flex justify-content-between">
               <div className="p-3">
-                <img class="logo-medium d-none d-md-block" src={logo} alt="logo" />
+                <Link to="/" >
+                  <img class="logo-medium d-none d-md-block" src={logo} alt="logo" />
+                </Link>
+                
                 <i className="fab fa-medium d-md-none"></i>
               </div>
               {
