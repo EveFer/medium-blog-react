@@ -10,12 +10,14 @@ import {
 
 // Pages
 import Posts from './pages/Posts'
+import Post from './pages/Post'
+
 
 function App() {
   return (
     <Router>
       <div className="container">
-        <Posts />
+        <Post />
         {/* <Switch>
             <Route exact path="/" >
             </Route>
@@ -24,6 +26,7 @@ function App() {
             <Route exact path="/posts" >
             </Route>
             <Route exact path="/posts/:id" >
+              <Posts/>
             </Route>
         </Switch> */}
       </div>
