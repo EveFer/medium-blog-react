@@ -4,11 +4,19 @@ import logo from '../../assets/img/logo medium-desktop.png'
 import avatar from '../../assets/img/avatar.png'
 
 // External Packages
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import './Header.scss'
 
-function Header ({ isAuthenticated }) {
+function Header ({ isAuthenticated, logOut }) {
+  const history = useHistory()
+
+  const logOutUser = () => {
+    if (window.localStorage.getItem('authToken')) {
+      logOut()
+      history.push('/')
+    }
+  }
   return (
     <div className='row'>
       <div className='col-12'>
@@ -37,7 +45,9 @@ function Header ({ isAuthenticated }) {
                   className='btn rounded upgrade-header border border-dark d-none d-md-block mr-2 '
                 >Upgrade
                 </button>
-                <img class='avatar-medium margin-right ' src={avatar} alt='' />
+                <button className='btn btn-success rounded upgrade-header mr-2' onClick={logOutUser}>Create Post</button>
+                <button className='btn btn-secondary rounded upgrade-header mr-2' onClick={logOutUser}>Log Out</button>
+                <img className='avatar-medium margin-right ' src={avatar} alt='' />
               </div>
 
             ) : (
