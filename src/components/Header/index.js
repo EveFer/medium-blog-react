@@ -15,7 +15,7 @@ function Header ({ isAuthenticated }) {
         <header className='d-flex justify-content-between'>
           <div className='p-3'>
             <Link to='/'>
-              <img class='logo-medium d-none d-md-block' src={logo} alt='logo' />
+              <img className='logo-medium d-none d-md-block' src={logo} alt='logo' />
             </Link>
 
             <i className='fab fa-medium d-md-none' />
