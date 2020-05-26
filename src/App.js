@@ -13,6 +13,7 @@ import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import Posts from './pages/Posts'
 import Post from './pages/Post'
+import CreatePost from './pages/CreatePost'
 
 // components
 import NotFound from './components/NotFound'
@@ -50,9 +51,9 @@ function App () {
           <Route exact path='/post/:id'>
             <Post isAuthenticated={isUserLoggedIn} />
           </Route>
-          <Route isUserLoggedIn={isUserLoggedIn} exact path='/post/create'>
-            {/* componente */}
-          </Route>
+          <Router exact path='/create-post'>
+            <CreatePost />
+          </Router>
           <Route path='*'>
             <NotFound />
           </Route>
