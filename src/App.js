@@ -16,7 +16,6 @@ import Posts from './pages/Posts'
 import Post from './pages/Post'
 import CreatePost from './pages/CreatePost'
 
-
 function App () {
   return (
     <Router>
@@ -31,8 +30,11 @@ function App () {
           <Route exact path='/posts'>
             <Posts />
           </Route>
-          <Route exact path='/post/:id' >
-            <Post/>
+          <Route exact path='/post/:id'>
+            <Post />
+          </Route>
+          <Route exact path='/post/create'>
+            {/* componente */}
           </Route>
           <Router exact path='/create-post'>
             <CreatePost/>
