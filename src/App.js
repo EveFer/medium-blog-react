@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.scss'
 
 // External Packages
@@ -14,10 +14,29 @@ import SignUp from './pages/SignUp'
 import Posts from './pages/Posts'
 import Post from './pages/Post'
 
+// components
+import NotFound from './components/NotFound'
+import Header from './components/Header'
+
 function App () {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const authToken = window.localStorage.getItem('authToken')
+    if (authToken) {
+      setIsUserLoggedIn(true)
+    }
+  }, [])
+
+  const logOut = () => {
+    window.localStorage.removeItem('authToken')
+    setIsUserLoggedIn(false)
+  }
+
   return (
     <Router>
       <div className='container'>
+        <Header isAuthenticated={isUserLoggedIn} logOut={logOut} />
         <Switch>
           <Route exact path='/'>
             <Home />
@@ -26,13 +45,16 @@ function App () {
             <SignUp />
           </Route>
           <Route exact path='/posts'>
-            <Posts />
+            <Posts isAuthenticated={isUserLoggedIn} />
           </Route>
           <Route exact path='/post/:id'>
-            <Post />
+            <Post isAuthenticated={isUserLoggedIn} />
           </Route>
-          <Route exact path='/post/create'>
+          <Route isUserLoggedIn={isUserLoggedIn} exact path='/post/create'>
             {/* componente */}
+          </Route>
+          <Route path='*'>
+            <NotFound />
           </Route>
         </Switch>
       </div>
