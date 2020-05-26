@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+div.scrollmenu {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 0px;
+  position: sticky;
+}
+div.scrollmenu a {
+  display: inline-block;
+  color: $color-gray;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  padding-left: 0px;
+  cursor: pointer;
+  &:hover {
+  color:$color-black-1;
+    
+  }
+}
+.button-direction {
+  font-size: 25px;
+  color: $color-gray;
+  padding-top: 10px;
+  padding-left: 4px;
+  cursor: pointer;
+  &:hover {
+ color:$color-black-1
+
+}
+}
+
+@media (max-width: 600px) {
+  .button-direction {
+    padding-top: 8px;
+  }
+  .fa-medium {
+    padding: 6px 70px 0px 10px;
+    font-size: 40px;
+  }
+  div.scrollmenu {
+    padding-top: 0px;
+  }
+
+  div.scrollmenu a {
+    font-size: 13px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .fa-medium {
+        visibility: hidden;
+      }
+
+}
