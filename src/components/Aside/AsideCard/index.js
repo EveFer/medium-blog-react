@@ -2,26 +2,26 @@ import React from 'react'
 
 import './AsideCard.scss'
 
-function AsideCard(props) {
+function AsideCard({key,counter,title,author,date,time}) {
   return (
     <div className="asideCardInfo">
       <div className="row">
         <div className="col-3 d-flex justify-content-center">
           <h1 className="rankinPopularity ">
-            01
+            {counter}
           </h1>
         </div>
         <div className="col-9">
           <h2 className="asideTitle">
-            My journey Toward Radical Body Positivity
+            {title}
           </h2>
           <h5 className="asideAuthor">
-            Autor
+            {author}
           </h5>
           <span className="asideBottomInfo">
-            <time>18/03/1992 </time>
+            <time>{date} </time>
             <span>
-              . 10 min read 
+              . {time} read 
             </span>
           </span>
         </div>
