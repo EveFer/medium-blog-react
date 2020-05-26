@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.scss'
 
+
 // External Packages
 import {
   BrowserRouter as Router,
@@ -13,6 +14,7 @@ import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import Posts from './pages/Posts'
 import Post from './pages/Post'
+import CreatePost from './pages/CreatePost'
 
 
 function App () {
@@ -32,6 +34,9 @@ function App () {
           <Route exact path='/post/:id' >
             <Post/>
           </Route>
+          <Router exact path='/create-post'>
+            <CreatePost/>
+          </Router>
         </Switch>
       </div>
     </Router>
