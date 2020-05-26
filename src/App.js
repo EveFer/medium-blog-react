@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.scss';
+import React from 'react'
+import './App.scss'
 
 // External Packages
 import {
@@ -9,28 +9,32 @@ import {
 } from 'react-router-dom'
 
 // Pages
+import Home from './pages/Home'
+import SignUp from './pages/SignUp'
 import Posts from './pages/Posts'
 import Post from './pages/Post'
 
 
-function App() {
+function App () {
   return (
     <Router>
-      <div className="container">
-        <Post />
-        {/* <Switch>
-            <Route exact path="/" >
-            </Route>
-            <Route exact path="/login" >
-            </Route>
-            <Route exact path="/posts" >
-            </Route>
-            <Route exact path="/posts/:id" >
-              <Posts/>
-            </Route>
-        </Switch> */}
+      <div className='container'>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route exact path='/signup'>
+            <SignUp />
+          </Route>
+          <Route exact path='/posts'>
+            <Posts />
+          </Route>
+          <Route exact path='/post/:id' >
+            <Post/>
+          </Route>
+        </Switch>
       </div>
     </Router>
-  );
+  )
 }
-export default App;
+export default App

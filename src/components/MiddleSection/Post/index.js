@@ -27,16 +27,16 @@ function Post(props) {
                 </div>
               </div>
               <div className="col-4">
-                <div className="d-flex ">
-                  <i class="far fa-bookmark"></i>
-                  <i class="fas fa-ellipsis-h"></i>
+                <div className="d-flex justify-content-end">
+                  <i class="far fa-bookmark m-2"></i>
+                  <i class="fas fa-ellipsis-h m-2"></i>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-4">
-            <div >
-              <img  className="cardImage" src={"https://picsum.photos/100/100"} alt=""></img>
+            <div className="cardImage d-flex justify-content-center" >
+              <img src={"https://picsum.photos/110/110"} alt=""></img>
             </div>
           </div>
         </div>

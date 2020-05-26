@@ -6,8 +6,8 @@ function AsideCard(props) {
   return (
     <div className="asideCardInfo">
       <div className="row">
-        <div className="col-3">
-          <h1 className="rankinPopularity">
+        <div className="col-3 d-flex justify-content-center">
+          <h1 className="rankinPopularity ">
             01
           </h1>
         </div>
