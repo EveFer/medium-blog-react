@@ -12,6 +12,8 @@ import {
 import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import Posts from './pages/Posts'
+import Post from './pages/Post'
+
 
 function App () {
   return (
@@ -27,7 +29,9 @@ function App () {
           <Route exact path='/posts'>
             <Posts />
           </Route>
-          <Route exact path='/posts/:id' />
+          <Route exact path='/post/:id' >
+            <Post/>
+          </Route>
         </Switch>
       </div>
     </Router>

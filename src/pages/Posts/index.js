@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 // Components
 import Header from '../../components/Header'
+import Cards from '../../components/MiddleSection'
+
+import { Link } from "react-router-dom";
 import Banner from '../../components/Banner'
 
 export default class Posts extends Component {
@@ -16,19 +19,8 @@ export default class Posts extends Component {
             NAVBAR
           </div>
         </div>
-
         <Banner />
-
-        <div className='row'>
-          <div className='col-12 col-lg-8'>
-            {/* Aqui componente MiddleSection - Gerardo */}
-              GERRARDO
-          </div>
-          <div className='col-12 col-lg-4'>
-            {/* Aqui componente MiddleSection - Gerardo */}
-              GERARDO
-          </div>
-        </div>
+        <Cards/>  
       </>
     )
   }
