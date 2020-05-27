@@ -29,5 +29,20 @@ function GetPosts () {
   return window.fetch(URL, options)
 }
 
+function createPost(dataPost){
+    const URL = `${URL_BASE}posts`
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(dataPost),
+        headers: {
+          'Content-Type': 'application/json',
+          "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYzg5YzQ5NTc1ZWZiMDA3ZTEzYTFmMiIsImlhdCI6MTU5MDQ3OTEyNn0.cMio3JpKCcuu5VPviyY5Ccs-e0L1QVVm6qXk0_o9Oc8"
+        },
+        mode: 'cors'
+      }
+      return window.fetch(URL, options)
 
-export { GetPosts, GetPost };
+}
+
+
+export { GetPosts, GetPost, createPost };
