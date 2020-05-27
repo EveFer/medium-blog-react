@@ -35,7 +35,8 @@ export default class Cards extends Component{
   _renderPosts(){
     const { posts } = this.state;
     return posts.map(({_id,category,title,description,author,publication_date,estimated_time,image}) => (
-    <Post key={_id} 
+    <Post key={_id}
+    id={_id} 
     category={category} 
     title={title} 
     description={description} 

@@ -1,10 +1,10 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 import './Post.scss'
 
 
-function Post({key,category,title,description,author,publication_date,estimated_time,image}) {
+function Post({key,id,category,title,description,author,publication_date,estimated_time,image}) {
 
   const sendDetail = () =>{
     return <Redirect to={`/post/${key}`}/>
@@ -17,8 +17,10 @@ function Post({key,category,title,description,author,publication_date,estimated_
             <h5 className="cardSubject">
               {category}
             </h5>
-            <h2 className="cardTitle">
+            <h2 className="cardTitle" >
+              <Link to={`/post/${id}`}>
               {title}
+              </Link>
             </h2>
             <h5 className="cardDescription">
               {description}
@@ -42,7 +44,7 @@ function Post({key,category,title,description,author,publication_date,estimated_
           </div>
           <div className="col-4">
             <div className="cardImage d-flex justify-content-center" >
-              <img src={image} alt=""></img>
+              <img src={image} alt="" onclick={sendDetail}></img>
             </div>
           </div>
         </div>

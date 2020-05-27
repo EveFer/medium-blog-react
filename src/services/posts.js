@@ -1,15 +1,18 @@
 const URL_BASE = 'https://api-medium.mybluemix.net/'
 
-function GetPost (token, id) {
+function GetPost (id) {
+  console.log('GET POSTS!!!!!')
+  console.log(id)
   const URL = `${URL_BASE}posts/${id}`
-  return fetch(URL, {
+  const options = {
     method: 'GET',
     headers: {
-      'Content-type': 'application/json',
-      Authorization: token
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYzg5YzQ5NTc1ZWZiMDA3ZTEzYTFmMiIsImlhdCI6MTU5MDQ3OTEyNn0.cMio3JpKCcuu5VPviyY5Ccs-e0L1QVVm6qXk0_o9Oc8'
     },
     mode: 'cors'
-  })
+  }
+  return window.fetch(URL, options)
 }
 
 function GetPosts () {
