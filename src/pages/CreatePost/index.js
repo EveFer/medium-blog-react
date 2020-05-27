@@ -1,48 +1,53 @@
 import React, { Component } from 'react'
 import './CreatePost.scss'
-import {createPost} from '../../services/posts'
+import { createPost } from '../../services/posts'
 
 export default class CreatePost extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      category:"",
-      title:"",
-      author:"",
-      description:"",
-      content:"",
-      publication_date:"",
-      estimated_time:"",
-      image:"",
-      tag:"",
-      imgDetail:""
-
+      category: '',
+      title: '',
+      author: '',
+      description: '',
+      content: '',
+      publication_date: '',
+      estimated_time: '',
+      image: '',
+      tag: '',
+      imgDetail: ''
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handleChange ({target:{name,value}}){
+
+  handleChange ({ target: { name, value } }) {
     this.setState({
-      [name]:value
+      [name]: value
     })
   }
-  async handleSubmit (event){
+
+  async handleSubmit (event) {
     event.preventDefault()
-    const {category, title, author, description, content, publication_date,estimated_time,image, tag, imgDetail} = this.state
-    const dataPost = {category, title, author, description, content, publication_date,estimated_time,image, tag, imgDetail}
-    const response = await createPost (dataPost)
-    const dataResponse = await response.json ()
+    const token = window.localStorage.getItem('authToken')
+    const { category, title, author, description, content, publication_date, estimated_time, image, tag, imgDetail } = this.state
+    const dataPost = { category, title, author, description, content, publication_date, estimated_time, image, tag, imgDetail }
+    const response = await createPost(dataPost, token)
+    const dataResponse = await response.json()
     console.log(dataResponse)
-    if (dataResponse.succsess){
-      window.location.href='/posts'
+    if (dataResponse.success) {
+      window.location.href = '/posts'
     }
   }
+
   render () {
-    const {category, title, author, description, content, publication_date,estimated_time,image, tag, imgDetail} = this.state
+    const { category, title, author, description, content, publication_date, estimated_time, image, tag, imgDetail } = this.state
     return (
       <>
         <div className='row'>
           <div className='col-12 col-md-8 mx-auto'>
-            <form className='d-flex flex-wrap border border-black p-5 shadow p-3 mb-5 bg-white rounded' onSubmit ={this.handleSudmit}>
-              <select id='post-category' className='form-control w-100 ' onChange = {this.handleChange} name ='category' value ={category}>
+            <form className='d-flex flex-wrap border border-black p-5 shadow p-3 mb-5 bg-white rounded' onSubmit={this.handleSubmit}>
+              <select id='post-category' className='form-control w-100 ' onChange={this.handleChange} name='category' value={category}>
                 <option value=' '>Categoría</option>
                 <option value='Development'>Development</option>
                 <option value='Tecnología'>Tecnología</option>
@@ -60,10 +65,10 @@ export default class CreatePost extends Component {
                 <input
                   className='form-control'
                   id='post-title'
-                  placeholder='Ingrese el Título' 
-                  onChange = {this.handleChange} 
-                  name ='title' 
-                  value ={title}
+                  placeholder='Ingrese el Título'
+                  onChange={this.handleChange}
+                  name='title'
+                  value={title}
                 />
               </div>
               <div className='form-group w-100'>
@@ -75,9 +80,9 @@ export default class CreatePost extends Component {
                   id='post-complete-description'
                   placeholder='Ingrese una breve despcripcion'
                   defaultValue=''
-                  onChange = {this.handleChange} 
-                  name ='description' 
-                  value = { description}
+                  onChange={this.handleChange}
+                  name='description'
+                  value={description}
                 />
               </div>
               <div className='form-group w-100'>
@@ -89,15 +94,17 @@ export default class CreatePost extends Component {
                   id='post-complete-content'
                   placeholder='Ingrese el contenido completo'
                   defaultValue=''
-                  onChange = {this.handleChange} 
-                  name ='content' 
-                  value ={content}
+                  onChange={this.handleChange}
+                  name='content'
+                  value={content}
                 />
               </div>
-              <select id='post-tag' className='form-control w-100' 
-                  onChange = {this.handleChange} 
-                  name ='tag' 
-                  value ={tag}>
+              <select
+                id='post-tag' className='form-control w-100'
+                onChange={this.handleChange}
+                name='tag'
+                value={tag}
+              >
                 <option value=' '>Tag - In</option>
                 <option value='Development'>Programming</option>
                 <option value='Diseño'>UX Planet</option>
@@ -116,9 +123,9 @@ export default class CreatePost extends Component {
                   className='form-control'
                   id='post-autor'
                   placeholder='Ingrese el Autor'
-                  onChange = {this.handleChange} 
-                  name ='author' 
-                  value ={author}
+                  onChange={this.handleChange}
+                  name='author'
+                  value={author}
                 />
               </div>
               <div className='form-group w-50'>
@@ -129,9 +136,9 @@ export default class CreatePost extends Component {
                   type='date'
                   className='form-control'
                   id='post-publication-date'
-                  onChange = {this.handleChange} 
-                  name ='publication_date' 
-                  value ={publication_date}
+                  onChange={this.handleChange}
+                  name='publication_date'
+                  value={publication_date}
                 />
               </div>
               <div className='form-group w-50 pr-2'>
@@ -142,9 +149,9 @@ export default class CreatePost extends Component {
                   className='form-control'
                   id='post-minutes-reading'
                   placeholder='Tiempo estimado de lectura'
-                  onChange = {this.handleChange} 
-                  name ='estimated_time' 
-                  value ={estimated_time}
+                  onChange={this.handleChange}
+                  name='estimated_time'
+                  value={estimated_time}
                 />
               </div>
               <div className='form-group w-50'>
@@ -156,9 +163,9 @@ export default class CreatePost extends Component {
                   className='form-control'
                   id='post-image'
                   placeholder='Ingrese la url de la imagen'
-                  onChange = {this.handleChange} 
-                  name ='image' 
-                  value = {image}
+                  onChange={this.handleChange}
+                  name='image'
+                  value={image}
                 />
               </div>
 
@@ -171,9 +178,9 @@ export default class CreatePost extends Component {
                   id='post-complete-description'
                   placeholder='url de la imagen para el detalle del post'
                   defaultValue=''
-                  onChange = {this.handleChange} 
-                  name ='imgDetail' 
-                  value = {imgDetail}
+                  onChange={this.handleChange}
+                  name='imgDetail'
+                  value={imgDetail}
                 />
               </div>
 
