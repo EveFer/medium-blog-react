@@ -29,28 +29,14 @@ export default class Aside extends Component{
   _renderPopularPosts(){
     const { popularPosts } = this.state;
     console.log(popularPosts)
-    // let counterb=0;
-    // return popularPosts.forEach(element => 
-    //   (
-    //   <AsideCard key={element._id}
-    //   counter={counterb}
-    //   title={element.title} 
-    //   author={element.author} 
-    //   date={element.publication_date} 
-    //   time={element.estimated_time} 
-    //   />)
-    // );
 
-
-    return popularPosts.map(({_id,title,author,publication_date,estimated_time}) =>(
+    return popularPosts.map(({_id,title,author,publication_date,estimated_time},index) =>(
       <AsideCard key={_id}
-                counter={"01"}
+                counter={index+1}
                 title={title} 
                 author={author} 
                 date={publication_date} 
                 time={estimated_time} 
-                
-
       />
     ))
   }
