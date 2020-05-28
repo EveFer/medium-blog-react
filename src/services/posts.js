@@ -1,6 +1,6 @@
 const URL_BASE = 'https://api-medium.mybluemix.net/'
 
-function GetPost (id) {
+function GetPost (id, token) {
   console.log('GET POSTS!!!!!')
   console.log(id)
   const URL = `${URL_BASE}posts/${id}`
@@ -8,14 +8,14 @@ function GetPost (id) {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYzg5YzQ5NTc1ZWZiMDA3ZTEzYTFmMiIsImlhdCI6MTU5MDQ3OTEyNn0.cMio3JpKCcuu5VPviyY5Ccs-e0L1QVVm6qXk0_o9Oc8'
+      Authorization: token
     },
     mode: 'cors'
   }
   return window.fetch(URL, options)
 }
 
-function GetPosts () {
+function GetPosts (token) {
   const URL_BASE = 'https://api-medium.mybluemix.net/'
   console.log('GET POSTS')
   const URL = `${URL_BASE}posts`
@@ -24,7 +24,7 @@ function GetPosts () {
     // body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYzg5YzQ5NTc1ZWZiMDA3ZTEzYTFmMiIsImlhdCI6MTU5MDQ3OTEyNn0.cMio3JpKCcuu5VPviyY5Ccs-e0L1QVVm6qXk0_o9Oc8'
+      Authorization: token
     },
     mode: 'cors'
   }
