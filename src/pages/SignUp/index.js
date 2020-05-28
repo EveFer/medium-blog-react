@@ -85,6 +85,7 @@ export default class SignUp extends Component {
             <div class='form-group'>
               <label for='exampleInputEmail1'>Contraseña</label>
               <input
+                Type='password'
                 value={password}
                 onChange={this.handleInput}
                 name='password'
