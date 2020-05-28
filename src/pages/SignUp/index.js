@@ -95,7 +95,7 @@ export default class SignUp extends Component {
                 aria-describedby='password'
               />
             </div>
-            <button type='submit' class='btn btn-primary'>LogIn</button>
+            <button type='submit' class='btn btn-primary'>Sign Up</button>
           </form>
 
         </div>

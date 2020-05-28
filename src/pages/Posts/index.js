@@ -22,7 +22,9 @@ export default class Posts extends Component {
               <Banner />
               <Cards />
             </>
-          ) : null
+          ) : (
+            window.location.href = '/'
+          )
         }
       </>
     )

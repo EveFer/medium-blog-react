@@ -50,7 +50,7 @@ function App () {
           </Route>
           <Route exact path='/post/:id' render={(props) => <Post isAuthenticated={isUserLoggedIn} {...props} />} />
           <Router exact path='/create-post'>
-            <CreatePost />
+            <CreatePost isAuthenticated={isUserLoggedIn} />
           </Router>
           <Route path='*'>
             <NotFound />

@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 
 // Components
-import Header from '../../components/Header'
 import DetailedPost from './DetailedPost'
 
-import { GetPosts, GetPost } from '../../services/posts'
+import { GetPost } from '../../services/posts'
 
 import './Post.scss'
 
@@ -77,9 +76,17 @@ export default class Post extends Component {
   // }
 
   render () {
+    const { isAuthenticated } = this.props
     return (
       <>
-        {this._renderPost()}
+        {
+          isAuthenticated ? (
+            this._renderPost()
+          ) : (
+            window.location.href = '/'
+          )
+        }
+
       </>
     )
   }
