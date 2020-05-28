@@ -57,7 +57,7 @@ export default class SignUp extends Component {
     return (
       <div className='row mt-10'>
         <div className='col-6 mx-auto'>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className='border border-black p-5 shadow p-3 mb-5 bg-white rounded'>
             <div class='form-group'>
               <label for='exampleInputEmail1'>Nombre completo</label>
               <input
