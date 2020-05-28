@@ -10,6 +10,7 @@ import './Header.scss'
 
 function Header ({ isAuthenticated, logOut }) {
   const history = useHistory()
+  const path = isAuthenticated ? '/posts' : '/'
 
   const logOutUser = () => {
     if (window.localStorage.getItem('authToken')) {
@@ -22,7 +23,8 @@ function Header ({ isAuthenticated, logOut }) {
       <div className='col-12'>
         <header className='d-flex justify-content-between'>
           <div className='p-3'>
-            <Link to='/'>
+
+            <Link to={path}>
               <img className='logo-medium d-none d-md-block' src={logo} alt='logo' />
             </Link>
 
@@ -45,7 +47,7 @@ function Header ({ isAuthenticated, logOut }) {
                   className='btn rounded upgrade-header border border-dark d-none d-md-block mr-2 '
                 >Upgrade
                 </button>
-                <button className='btn btn-success rounded upgrade-header mr-2' onClick={logOutUser}>Create Post</button>
+                <Link className='btn btn-success rounded upgrade-header mr-2' to='/create-post'>Create Post</Link>
                 <button className='btn btn-secondary rounded upgrade-header mr-2' onClick={logOutUser}>Log Out</button>
                 <img className='avatar-medium margin-right ' src={avatar} alt='' />
               </div>

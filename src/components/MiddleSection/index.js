@@ -17,7 +17,8 @@ export default class Cards extends Component {
 
   async componentDidMount () {
     try {
-      const response = await GetPosts()
+      const token = window.localStorage.getItem('authToken')
+      const response = await GetPosts(token)
       const dataResponse = await response.json()
       console.log(dataResponse.data.posts)
       this.setState({

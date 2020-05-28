@@ -1,14 +1,11 @@
 
 .scroll{
     background-color: inherit;
-    width: 750px;
-    height: 500px;
-   
+    width: 100%;
+    height: 600px;
     overflow-y: scroll;
   }
   
   .scroll::-webkit-scrollbar {
     display: none;
-  
-    
   }
