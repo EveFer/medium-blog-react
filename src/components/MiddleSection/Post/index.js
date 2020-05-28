@@ -31,12 +31,12 @@ function Post({key,id,category,title,description,author,publication_date,estimat
                   <span className="cardBottomInfo"><time><Moment format="MMM , DD">{publication_date}</Moment> </time><span> . </span> {estimated_time} read <span></span></span>
                 </div>
               </div>
-              <div className="col-4">
-                <div className="d-flex justify-content-end">
-                  <i class="far fa-bookmark m-2"></i>
-                  <i class="fas fa-ellipsis-h m-2"></i>
-                </div>
+            <div className='col-4'>
+              <div className='d-flex justify-content-end'>
+                <i class='far fa-bookmark m-2' />
+                <i class='fas fa-ellipsis-h m-2' />
               </div>
+            </div>
             </div>
           </div>
           <div className="col-4">
@@ -46,9 +46,7 @@ function Post({key,id,category,title,description,author,publication_date,estimat
           </div>
         </div>
       </div>
-    )
+  )
 }
-    
+
 export default Post
-
-
