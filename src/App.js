@@ -48,9 +48,7 @@ function App () {
           <Route exact path='/posts'>
             <Posts isAuthenticated={isUserLoggedIn} />
           </Route>
-          <Route exact path='/post/:id'>
-            <Post isAuthenticated={isUserLoggedIn} />
-          </Route>
+          <Route exact path='/post/:id' render={(props) => <Post isAuthenticated={isUserLoggedIn} {...props} />} />
           <Router exact path='/create-post'>
             <CreatePost />
           </Router>

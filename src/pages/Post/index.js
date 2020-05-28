@@ -12,7 +12,6 @@ export default class Post extends Component {
   constructor(props){
     super(props)
       this.state= {
-        id: "5eccba1556a2280081d64d2c",
         post:{}
         // category: "",
         // title: "",
@@ -31,8 +30,8 @@ export default class Post extends Component {
 
   async componentDidMount(){
     try {
-      const response = await GetPost(this.state.id)
-      console.log(this.state.id)
+      const { id } = this.props.match.params
+      const response = await GetPost(id)
       const dataResponse = await response.json()
       console.log(dataResponse.data.post)
       this.setState({
@@ -80,7 +79,6 @@ export default class Post extends Component {
   render() {
     return (
       <>
-        <Header />
         {this._renderPost()}
       </>
     )

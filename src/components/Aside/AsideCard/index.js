@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Moment from 'react-moment'
 import './AsideCard.scss'
 
 function AsideCard({key,counter,title,author,date,time}) {
@@ -19,7 +19,7 @@ function AsideCard({key,counter,title,author,date,time}) {
             {author}
           </h5>
           <span className="asideBottomInfo">
-            <time>{date} </time>
+            <time><Moment format="MMM , DD">{date}</Moment></time>
             <span>
               . {time} read 
             </span>
