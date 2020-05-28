@@ -1,17 +1,14 @@
 import React from 'react'
 import {Redirect, Link} from 'react-router-dom'
+import Moment from 'react-moment'
 
 import './Post.scss'
 
 
 function Post({key,id,category,title,description,author,publication_date,estimated_time,image}) {
 
-  const sendDetail = () =>{
-    return <Redirect to={`/post/${key}`}/>
-  }
-
     return (
-      <div className="card border-0" onClick={sendDetail}>
+      <div className="card border-0" >
         <div className="row">
           <div className="col-8">
             <h5 className="cardSubject">
@@ -31,7 +28,7 @@ function Post({key,id,category,title,description,author,publication_date,estimat
                   <h5 className="cardAuthor">
                     {author}
                   </h5>
-                  <span className="cardBottomInfo"><time>{publication_date} </time><span> . </span> {estimated_time} read <span></span></span>
+                  <span className="cardBottomInfo"><time><Moment format="MMM , DD">{publication_date}</Moment> </time><span> . </span> {estimated_time} read <span></span></span>
                 </div>
               </div>
               <div className="col-4">
@@ -44,7 +41,7 @@ function Post({key,id,category,title,description,author,publication_date,estimat
           </div>
           <div className="col-4">
             <div className="cardImage d-flex justify-content-center" >
-              <img src={image} alt="" onclick={sendDetail}></img>
+              <img src={image} alt=""></img>
             </div>
           </div>
         </div>
@@ -53,3 +50,5 @@ function Post({key,id,category,title,description,author,publication_date,estimat
 }
     
 export default Post
+
+

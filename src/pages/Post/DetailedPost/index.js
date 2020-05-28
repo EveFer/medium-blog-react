@@ -3,6 +3,8 @@ import React from 'react'
 import logo from '../../../assets/img/Medium_White.png'
 import claps from '../../../assets/img/claps.png'
 
+import Moment from 'react-moment'
+
 
 function DetailedPost({category,title,author,description,content,publication_date,estimated_time,image,tag, imgDetail}){
 return (
@@ -19,7 +21,7 @@ return (
             <img src={image}  class="rounded-circle mr-3" height="50px" width="50px" alt="avatar"/>
             <div>
               <h4 class="card-title">{author}</h4>
-              <span className="card-text"><time>{publication_date} </time><span> . </span> {estimated_time} read <span></span></span>
+              <span className="card-text"><time><Moment format="MMM , DD">{publication_date}</Moment>  </time><span> . </span> {estimated_time} read <span></span></span>
             </div>
           </div>
         </div>
